@@ -1,33 +1,116 @@
 body {
-    font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 100%;
-    overflow-wrap: break-word;
-
+  font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 100%;
+  overflow-wrap: break-word;
+  margin: 0px;
 }
-@page { 
-    size: auto;  
-    margin: 0.25in; 
+@page {
+  size: landscape;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 11in;
+  outline: 1px solid black;
 }
 
 .container {
-    width: calc(50vw - 0.125in);
-    flex-basis: 50%;
-    min-height: 2.66in;
-    max-height: 2.66in;
+  flex-basis: calc(50% - 0.8in);
+  margin: 0.2in;
+  min-height: 3.45in;
+  max-height: 3.45in;
+  padding: 0.2in;
+  overflow: hidden;
+  position: relative;
+  page-break-inside: avoid;
+  page-break-after: auto;
 }
 
 .border-yellow {
-    outline: 0.20em solid #F6C83E;
+  outline: 0.2em solid #f6c83e;
 }
 
 .border-red {
-    border: 4px solid #CC293D; 
+  outline: 0.2em solid #cc293d;
 }
 
 .border-blue {
-    border: 4px solid #009ccc; 
+  outline: 0.2em solid #009ccc;
 }
 
+.title {
+  font-size: 12pt;
+  margin-bottom: 1em;
+}
+
+.description {
+  font-size: 10pt;
+  width: 75%;
+}
+
+.box {
+  float: right;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.work_item_id {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: 14pt;
+  padding: 0.2em;
+}
+.area {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.2em;
+}
+
+.border-red .area,
+.border-red .work_item_id {
+  background: #cc293d;
+  color: white;
+}
+
+.invest {
+  border-radius: 50%;
+  border: 1px solid gray;
+  width: 1.5em;
+  height: 1.5em;
+  position: absolute;
+  right: 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  font: bold;
+}
+.invest-i {
+  bottom: 12.5em;
+}
+.invest-n {
+  bottom: 10.5em;
+}
+.invest-v {
+  bottom: 8.5em;
+}
+.invest-e {
+  bottom: 6.5em;
+}
+.invest-s {
+  bottom: 4.5em;
+}
+.invest-t {
+  bottom: 2.5em;
+}
 
 /*
 .history {

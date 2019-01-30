@@ -1,138 +1,24 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <script src="../lib/VSS.SDK.min.js"></script>
-    <style type="text/css">
-        body {
-            font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            font-size: 100%;
-            overflow-wrap: break-word;
-        }
-        @page { 
-            size: auto;  
-            margin: 0.5im; 
-        }
+    <link rel="stylesheet" href="../static/pcards.css" />
+  </head>
 
-        .history {
-            padding: 10px 0 0 10px;
-        }
-
-        .border-yellow {
-            border: 4px solid #F6C83E;
-        }
-
-        .border-red {
-            border: 4px solid #CC293D; 
-        }
-
-        .border-blue {
-            border: 4px solid #009ccc; 
-        }
-
-        .container {
-            width: calc(50% - 0.5in);
-            font-family: sans-serif;
-            page-break-inside: avoid;
-            margin-left: 15px;
-            margin-top: 20px;
-        }
-
-        .title-and-estimate-container {
-            margin: 15px 15px 25px 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .estimate-container {
-            width: 100px;
-            height: 100px;
-        }
-
-        .userstory-and-discipline-container {
-            margin: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .box {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 15px;
-            margin-left: 15px;
-        }
-
-        .user-story {
-            margin-right: 30px;
-        }
-
-        .discipline {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .title-text {
-            font-size: 25px;
-            margin-top: 5px;
-            width: 440px;
-        }
-
-        .acceptance-criteria-container {
-            display: flex;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-bottom: 15px;
-            margin-top: 20px;
-        }
-
-        .description {
-            margin-top:20px;
-        }
-
-        .po {
-            display: flex;
-        }
-
-        .po-vsts-container {
-            justify-content: space-between;
-            display: flex;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-bottom: 25px;
-        }
-
-        .vsts-number {
-            display: flex;
-            font-size: 40px;
-        }
-
-        hr {
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid #ccc;
-            margin: 1em 0;
-            padding: 0;
-        }
-
-    </style>
-</head>
-
-<body>
+  <body>
     <script type="text/javascript">
-        // Initialize framework
-        VSS.init({
-            explicitNotifyLoaded: true,
-            usePlatformScripts: true
-        });
-        // Load main entry point for extension
-        VSS.require(["dist/pcards"], function (pcards) {
-            // Loading succeeded
-            VSS.notifyLoadSucceeded();
-        });
+      // Initialize framework
+      VSS.init({
+        explicitNotifyLoaded: true,
+        usePlatformScripts: true
+      });
+      // Load main entry point for extension
+      VSS.require(["dist/pcards"], function(pcards) {
+        // Loading succeeded
+        VSS.notifyLoadSucceeded();
+      });
     </script>
-</body>
-
+  </body>
 </html>
