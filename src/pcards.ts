@@ -46,7 +46,7 @@ const printWorkItems = {
             })
             .then((pages: any) => {
               const workItems = document.createElement("div");
-              workItems.setAttribute("class", "container border");
+              workItems.setAttribute("class", "wrapper");
 
               pages.forEach(page => {
                 let bugCard: any;
@@ -56,6 +56,9 @@ const printWorkItems = {
                 if (page.type === "Bug") {
                   bugCard = bugTemplate({
                     number: page.id,
+                    state: page.state,
+                    value_area: page.value_area,
+                    sprint: page.sprint,
                     title: page.title,
                     repro_steps: page.repro_steps,
                     system_info: page.system_info
@@ -65,6 +68,9 @@ const printWorkItems = {
                 if (page.type === "User Story") {
                   userStoryCard = userStoryTemplate({
                     number: page.id,
+                    state: page.state,
+                    value_area: page.value_area,
+                    sprint: page.sprint,
                     title: page.title,
                     description: page.description,
                     acceptance_criteria: page.acceptance_criteria
@@ -74,6 +80,9 @@ const printWorkItems = {
                 if (page.type === "Task") {
                   taskCard = taskTemplate({
                     number: page.id,
+                    state: page.state,
+                    value_area: page.value_area,
+                    sprint: page.sprint,
                     title: page.title,
                     description: page.description
                   });
@@ -88,8 +97,13 @@ const printWorkItems = {
                 if (page.type === "Task") {
                   workItems.innerHTML += taskCard;
                 }
-                if (page.type !== "User Story" && page.type !== "Bug" && page.type !== "Task") {
-                  workItems.innerHTML += "<div class='container'>Work item type not supported. Submit pull requests here: https://github.com/ryanjones/pcards</div>";
+                if (
+                  page.type !== "User Story" &&
+                  page.type !== "Bug" &&
+                  page.type !== "Task"
+                ) {
+                  workItems.innerHTML +=
+                    "<div class='container'>Work item type not supported. Submit pull requests here: https://github.com/ryanjones/pcards</div>";
                 }
               });
               document.body.appendChild(workItems);
@@ -128,30 +142,40 @@ function prepare(workItems: Models.WorkItem[]) {
 
     if (item.fields["System.WorkItemType"] === "User Story") {
       result = {
-        "type": item.fields["System.WorkItemType"],
-        "title": item.fields["System.Title"],
-        "description":  item.fields["System.Description"],
-        "acceptance_criteria":  item.fields["Microsoft.VSTS.Common.AcceptanceCriteria"],
-        "id":  item.fields["System.Id"]
+        type: item.fields["System.WorkItemType"],
+        title: item.fields["System.Title"],
+        description: item.fields["System.Description"],
+        acceptance_criteria:
+          item.fields["Microsoft.VSTS.Common.AcceptanceCriteria"],
+        state: item.fields["System.State"],
+        sprint: item.fields["System.IterationPath"],
+        value_area: item.fields["Microsoft.VSTS.Common.ValueArea"],
+        id: item.fields["System.Id"]
       };
     }
 
     if (item.fields["System.WorkItemType"] === "Bug") {
       result = {
-        "type": item.fields["System.WorkItemType"],
-        "title": item.fields["System.Title"],
-        "repro_steps":  item.fields["Microsoft.VSTS.TCM.ReproSteps"],
-        "system_info":  item.fields["Microsoft.VSTS.TCM.SystemInfo"],
-        "id":  item.fields["System.Id"]
+        type: item.fields["System.WorkItemType"],
+        title: item.fields["System.Title"],
+        repro_steps: item.fields["Microsoft.VSTS.TCM.ReproSteps"],
+        system_info: item.fields["Microsoft.VSTS.TCM.SystemInfo"],
+        state: item.fields["System.State"],
+        sprint: item.fields["System.IterationPath"],
+        value_area: item.fields["Microsoft.VSTS.Common.ValueArea"],
+        id: item.fields["System.Id"]
       };
     }
 
     if (item.fields["System.WorkItemType"] === "Task") {
       result = {
-        "type": item.fields["System.WorkItemType"],
-        "title": item.fields["System.Title"],
-        "description":  item.fields["System.Description"],
-        "id":  item.fields["System.Id"]
+        type: item.fields["System.WorkItemType"],
+        title: item.fields["System.Title"],
+        description: item.fields["System.Description"],
+        state: item.fields["System.State"],
+        sprint: item.fields["System.IterationPath"],
+        value_area: item.fields["Microsoft.VSTS.Common.ValueArea"],
+        id: item.fields["System.Id"]
       };
     }
 

@@ -15,7 +15,7 @@
   "devDependencies": {
     "cpx": "^1.5.0",
     "rimraf": "^2.6.1",
-    "tfx-cli": "^0.5.10",
+    "tfx-cli": "^0.6.4",
     "ts-loader": "^4.4.2",
     "tslint": "^5.11.0",
     "tslint-loader": "^3.6.0",

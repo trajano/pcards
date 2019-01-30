@@ -5,21 +5,22 @@ body {
   font-size: 100%;
   overflow-wrap: break-word;
   margin: 0px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 @page {
   size: landscape;
   margin: 0;
 }
-
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
 .container {
   flex-basis: calc(50% - 0.8in);
   margin: 0.2in;
-  min-height: 3.45in;
-  max-height: 3.45in;
+  min-height: 3.75in;
+  max-height: 3.75in;
   padding: 0.2in;
   overflow: hidden;
   position: relative;
@@ -90,6 +91,12 @@ h1,
   bottom: 0;
   left: 0;
   padding: 0.2em;
+}
+
+.border-red .area,
+.border-red .work_item_id {
+  background: #cc293d;
+  color: white;
 }
 
 .border-red .area,
