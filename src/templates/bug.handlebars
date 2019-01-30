@@ -1,40 +1,18 @@
 <div class="container border-red">
-  <div class="title-and-estimate-container">
-    <div class="title-container">
-      <div class="title-text">
-        <strong>Title:&nbsp;</strong>{{title}}
-      </div>
-    </div>
-    <div class="estimate-container border-red"></div>
+  <div class="work_item_id">{{number}}</div>
+  <div class="box">
+    <svg width="0.75in" height="0.75in">
+      <rect width="0.75in" height="0.75in" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />
+    </svg>
   </div>
-  <div class="userstory-and-discipline-container">
-    <div class="user-story"> 
-      <strong>Reproduction Steps:</strong>
-      <br/>
-        {{{repro_steps}}}
-      <br/><br/>
-      <strong>System Info:</strong>
-      <br/>
-        {{{system_info}}}
-      <br/>
-     </div>
-    <div class="discipline-container">
-      <div class="discipline">
-        <div class="description">Dev</div>
-        <div class="box border-red"></div>
-      </div>
-      <div class="discipline">
-        <div class="description">UX</div>
-        <div class="box border-red"></div>
-      </div>
-    </div>
-  </div>
-  <div class="po-vsts-container">
-    <div class="po">
-      <strong>Product Owner:</strong>
-    </div>
-    <div class="vsts-number">
-      <strong>{{number}}</strong>
-    </div>
+
+  <h1>{{title}}</h1>
+
+  <div class="description">
+    <h2>Reproduction Steps:</h2>
+    {{{repro_steps}}}
+    <hr />
+    <h2>System Info:</h2>
+    {{{system_info}}}
   </div>
 </div>

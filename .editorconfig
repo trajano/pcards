@@ -2,3 +2,6 @@ root = true
 [*.html]
 indent_size = 2
 insert_final_newline = true
+[*.handlebars]
+indent_size = 2
+insert_final_newline = true
