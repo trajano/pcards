@@ -5,19 +5,14 @@ body {
   font-size: 100%;
   overflow-wrap: break-word;
   margin: 0px;
-}
-@page {
-  size: landscape;
-  margin: 0;
-}
-
-.wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 11in;
-  outline: 1px solid black;
+}
+@page {
+  size: landscape;
+  margin: 0;
 }
 
 .container {
